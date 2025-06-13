@@ -1,0 +1,1082 @@
+<html class="scroll-smooth" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   ENAMI - Personalized Heritage Books
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <style>
+   /* Custom fonts */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f5ec;
+      color: #1c1c1c;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Scrollbar for carousel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    /* Transition for sticky header */
+    .transition-header {
+      transition: all 0.3s ease-in-out;
+    }
+    /* Fix iframe container for responsive map */
+    .map-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 0.5rem; /* rounded-lg */
+      box-shadow: 0 10px 15px -3px rgb(28 28 28 / 0.1), 0 4px 6px -2px rgb(28 28 28 / 0.05); /* shadow-lg */
+    }
+    .map-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: 0;
+    }
+    .font-playfair {
+      font-family: 'Playfair Display', serif;
+    }
+    .font-serif {
+      font-family: serif;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+      border-radius: 0.5rem;
+    }
+    /* AOS fade in */
+    [data-aos] {
+      opacity: 0;
+      transition-property: opacity, transform;
+      transition-duration: 0.8s;
+      transition-timing-function: ease-out;
+      will-change: opacity, transform;
+    }
+    [data-aos].aos-animate {
+      opacity: 1;
+      transform: none;
+    }
+    /* Card hover effect */
+    .card-hover:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 20px 25px -5px rgb(28 28 28 / 0.2), 0 10px 10px -5px rgb(28 28 28 / 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 10;
+    }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform, box-shadow;
+    }
+    /* Image hover zoom */
+    .img-hover-zoom {
+      transition: transform 0.4s ease;
+      will-change: transform;
+    }
+    .img-hover-zoom:hover {
+      transform: scale(1.1);
+    }
+  </style>
+ </head>
+ <body class="bg-[#F9F5EC] text-[#1C1C1C]">
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+   AOS.init({
+     once: true,
+     duration: 800,
+     easing: 'ease-out',
+   });
+  </script>
+  <script>
+   // Simple AOS implementation fallback (optional)
+    document.addEventListener('DOMContentLoaded', () => {
+      const aosElements = document.querySelectorAll('[data-aos]');
+      const offset = 100;
+      function aosCheck() {
+        const scrollPos = window.pageYOffset + window.innerHeight;
+        aosElements.forEach(el => {
+          if (!el.classList.contains('aos-animate')) {
+            const elTop = el.getBoundingClientRect().top + window.pageYOffset;
+            if (scrollPos > elTop + offset) {
+              el.classList.add('aos-animate');
+            }
+          }
+        });
+      }
+      aosCheck();
+      window.addEventListener('scroll', aosCheck);
+    });
+  </script>
+  <!-- Sticky Header -->
+   <header
+    aria-label="Primary Navigation"
+    id="header"
+    class="fixed top-0 left-0 w-full z-50 transition-header bg-gradient-to-b from-[#2a2a2a]/90 to-transparent backdrop-blur-md shadow-md"
+  >
+    <div
+      id="header-inner"
+      class="max-w-7xl mx-auto flex items-center justify-between px-6 py-5 md:py-4 transition-all duration-300"
+    >
+      <a
+        aria-label="ENAMI Home"
+        href="#home"
+        class="flex items-center space-x-3"
+      >
+        <img
+          id="logo-img"
+          src="https://storage.googleapis.com/a1aa/image/005e436d-6423-42bb-912a-72060bfdc95e.jpg"
+          alt="ENAMI logo in Antique Gold color, minimalist monogram with stylized E and N intertwined resembling an open book"
+          width="120"
+          height="40"
+          class="hidden h-10 md:h-12 transition-all duration-300"
+        />
+        <span class="logo-font text-[#C6A664] text-xl md:text-2xl font-bold select-none">
+          ENAMI
+        </span>
+      </a>
+      <nav class="hidden md:flex space-x-10 font-medium tracking-wide">
+        <a
+          href="#home"
+          aria-current="page"
+          class="nav-link relative text-[#F9F5EC] hover:text-[#D4B95B] transition-colors duration-300"
+          >Home</a
+        >
+        <a
+          href="#our-concept"
+          class="nav-link relative text-[#F9F5EC] hover:text-[#D4B95B] transition-colors duration-300"
+          >About Us</a
+        >
+        <a
+          href="#what-you-receive"
+          class=" nav-link relative text-[#F9F5EC] hover:text-[#D4B95B] transition-colors duration-300"
+          >What You Receive</a
+        >
+        <a
+          href="#process"
+          class="hidden nav-link relative text-[#F9F5EC] hover:text-[#D4B95B] transition-colors duration-300"
+          >The ENAMI Process</a
+        >
+        <a
+          href="#testimonials"
+          class="nav-link relative text-[#F9F5EC] hover:text-[#D4B95B] transition-colors duration-300"
+          >Testimonials</a
+        >
+        <a
+          href="#gifting"
+          class="hidden nav-link relative text-[#F9F5EC] hover:text-[#D4B95B] transition-colors duration-300"
+          >Gifting a Legacy</a
+        >
+        <a
+          href="#contact"
+          class="hidden nav-link relative text-[#F9F5EC] hover:text-[#D4B95B] transition-colors duration-300"
+          >Contact Us</a
+        >
+      </nav>
+      <div class="hidden md:block">
+        <a
+          href="#contact"
+          class="inline-block rounded-md border border-[#D4B95B] bg-[#D4B95B] px-5 py-2 text-sm font-semibold text-[#1C1C1C] shadow-lg transition hover:bg-[#b5944f] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D4B95B] focus:ring-offset-2"
+          >Create My Book</a
+        >
+      </div>
+      <button
+        id="mobile-menu-button"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+        class="md:hidden text-[#F9F5EC] focus:outline-none focus:ring-2 focus:ring-[#D4B95B]"
+      >
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+    </div>
+    <nav
+      id="mobile-menu"
+      aria-label="Mobile Navigation"
+      class="hidden md:hidden bg-[#2a2a2a] text-[#F9F5EC] px-6 py-5 space-y-5"
+    >
+      <a
+        href="#home"
+        class="block py-2 border-b border-[#D4B95B] hover:text-[#D4B95B] font-semibold"
+        >Home</a
+      >
+      <a
+        href="#our-concept"
+        class="block py-2 border-b border-[#D4B95B] hover:text-[#D4B95B] font-semibold"
+        >About Us</a
+      >
+      <a
+        href="#what-you-receive"
+        class="block py-2 border-b border-[#D4B95B] hover:text-[#D4B95B] font-semibold"
+        >What You Receive</a
+      >
+      <a
+        href="#process"
+        class=" block py-2 border-b border-[#D4B95B] hover:text-[#D4B95B] font-semibold"
+        >The ENAMI Process</a
+      >
+      <a
+        href="#testimonials"
+        class="block py-2 border-b border-[#D4B95B] hover:text-[#D4B95B] font-semibold"
+        >Testimonials</a
+      >
+      <a
+        href="#gifting"
+        class="  block py-2 border-b border-[#D4B95B] hover:text-[#D4B95B] font-semibold"
+        >Gifting a Legacy</a
+      >
+      <a
+        href="#contact"
+        class=" block py-2 border-b border-[#D4B95B] hover:text-[#D4B95B] font-semibold"
+        >Contact Us</a
+      >
+      <a
+        href="#contact"
+        class="block mt-6 text-center rounded-md border border-[#D4B95B] bg-[#D4B95B] px-5 py-2 text-sm font-semibold text-[#1C1C1C] shadow-lg transition hover:bg-[#b5944f] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D4B95B] focus:ring-offset-2"
+        >Create My Book</a
+      >
+    </nav>
+    <script>
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenuButton.addEventListener('click', () => {
+        const expanded =
+          mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+        mobileMenuButton.setAttribute('aria-expanded', !expanded);
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Sticky header behavior
+      const header = document.getElementById('header');
+      const headerInner = document.getElementById('header-inner');
+      const logoImg = document.getElementById('logo-img');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('bg-[#1C1C1C]/95', 'backdrop-blur-sm', 'shadow-lg');
+          headerInner.classList.add('py-2');
+          headerInner.classList.remove('py-5', 'md:py-4');
+          logoImg.classList.add('h-8');
+          logoImg.classList.remove('h-10', 'md:h-12');
+          // Change nav link colors for sticky
+          document.querySelectorAll('nav a').forEach((link) => {
+            link.classList.add('text-[#D4B95B]');
+            link.classList.remove('text-[#F9F5EC]');
+          });
+        } else {
+          header.classList.remove('bg-[#1C1C1C]/95', 'backdrop-blur-sm', 'shadow-lg');
+          headerInner.classList.remove('py-2');
+          headerInner.classList.add('py-5', 'md:py-4');
+          logoImg.classList.remove('h-8');
+          logoImg.classList.add('h-10', 'md:h-12');
+          document.querySelectorAll('nav a').forEach((link) => {
+            link.classList.remove('text-[#D4B95B]');
+            link.classList.add('text-[#F9F5EC]');
+          });
+        }
+      });
+
+      // Highlight active nav link on scroll
+      const sections = [
+        'home',
+        'our-concept',
+        'what-you-receive',
+        'process',
+        'testimonials',
+        'gifting',
+        'contact',
+      ];
+      window.addEventListener('scroll', () => {
+        let scrollPos = window.scrollY + 120;
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = document.getElementById(sections[i]);
+          if (section && scrollPos >= section.offsetTop) {
+            document.querySelectorAll('nav a').forEach((link) => {
+              link.classList.remove('underline', 'decoration-2', 'decoration-[#D4B95B]');
+            });
+            const activeLink = document.querySelector(`nav a[href="#${sections[i]}"]`);
+            if (activeLink) {
+              activeLink.classList.add('underline', 'decoration-2', 'decoration-[#D4B95B]');
+            }
+            break;
+          }
+        }
+      });
+    </script>
+  </header>
+  <!-- Hero Section with background image -->
+  <section class="relative w-full h-screen overflow-hidden flex items-center justify-center text-center px-6" id="home">
+   <img alt="Background image of a serene African landscape with warm golden light, symbolizing heritage and legacy" class="absolute inset-0 w-full h-full object-cover" src="https://storage.googleapis.com/a1aa/image/bb6c213b-1069-4644-bab9-adc607902d64.jpg" />
+   <div class="absolute inset-0 bg-[#1C1C1C]/70 backdrop-blur-sm"></div>
+   <div class="relative z-10 max-w-4xl" data-aos="fade" data-aos-delay="100">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-[#C6A664] drop-shadow-lg leading-tight">
+     They passed on a name.
+     <br/>
+     We offer you a memory.
+    </h1>
+    <p class="mt-6 text-xl sm:text-2xl md:text-3xl font-serif text-[#F9F5EC] drop-shadow-md">
+     One book. One memory. One family forever.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-6">
+     <a class="inline-block rounded-md bg-[#C6A664] px-8 py-3 text-[#1C1C1C] font-semibold text-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#C6A664]/70" href="#contact" data-aos="zoom-in" data-aos-delay="200">
+      Create My Book
+     </a>
+     <a class="inline-block rounded-md border-2 border-[#C6A664] bg-[#1C1C1C] px-8 py-3 text-[#C6A664] font-semibold text-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-[#C6A664]/70" href="#contact" data-aos="zoom-in" data-aos-delay="300">
+      Book a Discovery Call
+     </a>
+    </div>
+   </div>
+  </section>
+  <!-- Our Concept / About Us -->
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-32 grid grid-cols-1 md:grid-cols-2 gap-12 items-center" id="our-concept">
+   <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+    <h2 class="text-3xl md:text-4xl font-playfair font-bold text-[#1C1C1C]">
+     Every family has a story. Some were never told.
+    </h2>
+    <p class="text-lg md:text-xl text-[#1C1C1C]/90 leading-relaxed font-serif">
+     We help African families preserve their legacy through a prestige book —
+        illustrated, written from real-life interviews, archives, and elevated
+        with a captivating, dignified narrative worthy of their ancestors.
+    </p>
+   </div>
+   <div class="grid grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="250">
+    <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg card-hover">
+     <img alt="Luxurious heritage book mockup with antique gold embossed cover, resting on a dark wooden table with soft natural light" class="w-full h-full object-cover img-hover-zoom" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7209bbf7-592b-4e0f-b811-1fc6ca93ac43.jpg" width="400"/>
+     <div aria-hidden="true" class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <i class="fas fa-search-plus text-4xl text-[#C6A664]">
+      </i>
+     </div>
+    </div>
+    <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg card-hover">
+     <img alt="Close-up of an open heritage book showing illustrated family tree and elegant calligraphy, warm ambient lighting" class="w-full h-full object-cover img-hover-zoom" height="300" loading="lazy" src="https://storage.googleapis.com/a1aa/image/328fadf3-cc90-44bd-6a85-b9ebf1ae892c.jpg" width="400"/>
+     <div aria-hidden="true" class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <i class="fas fa-search-plus text-4xl text-[#C6A664]">
+      </i>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- What You Receive -->
+  <section class="bg-[#1C1C1C] text-[#F9F5EC] py-20 px-6" id="what-you-receive">
+   <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center" data-aos="fade-up" data-aos-delay="100">
+     What You Receive
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" data-aos="fade-up" data-aos-delay="200">
+     <ul class="space-y-6 text-lg md:text-xl font-serif max-w-md mx-auto md:mx-0">
+      <li class="flex items-start gap-4">
+       <i class="fas fa-check-circle text-[#C6A664] mt-1">
+       </i>
+       <span>
+        Personalized hardcover book, luxury print with antique gold embossing.
+       </span>
+      </li>
+      <li class="flex items-start gap-4">
+       <i class="fas fa-check-circle text-[#C6A664] mt-1">
+       </i>
+       <span>
+        Illustrated pages, family anecdotes, family tree, ancestor timeline.
+       </span>
+      </li>
+      <li class="flex items-start gap-4">
+       <i class="fas fa-check-circle text-[#C6A664] mt-1">
+       </i>
+       <span>
+        QR code linking to personal video message or family archive.
+       </span>
+      </li>
+      <li class="flex items-start gap-4">
+       <i class="fas fa-check-circle text-[#C6A664] mt-1">
+       </i>
+       <span>
+        Optional formats: Digital version, children's version, gift box, collectible items.
+       </span>
+      </li>
+     </ul>
+     <div aria-label="Product mockups" class="grid grid-cols-2 gap-6 max-w-md mx-auto md:mx-0">
+      <div class="relative rounded-lg overflow-hidden shadow-lg cursor-pointer group card-hover" data-aos="zoom-in" data-aos-delay="300">
+       <img alt="Exquisite hardcover heritage book with antique gold embossed cover, standing upright on a dark velvet cloth" class="w-full h-full object-cover img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f50c88b2-a928-4e0d-e97c-8f7dd1e002cc.jpg" width="300"/>
+       <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+       </div>
+      </div>
+      <div class="relative rounded-lg overflow-hidden shadow-lg cursor-pointer group card-hover" data-aos="zoom-in" data-aos-delay="350">
+       <img alt="Premium presentation box for heritage book, antique gold accents on deep onyx black background, elegant packaging" class="w-full h-full object-cover img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5afd84b8-2321-40cc-c45b-af75cfa64d5e.jpg" width="300"/>
+       <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+       </div>
+      </div>
+      <div class="relative rounded-lg overflow-hidden shadow-lg cursor-pointer group card-hover" data-aos="zoom-in" data-aos-delay="400">
+       <img alt="Digital version of the heritage book displayed on a modern tablet with antique gold frame, soft ivory background" class="w-full h-full object-cover img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3c367213-39c7-43a9-d1a7-96763ac91d13.jpg" width="300"/>
+       <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+       </div>
+      </div>
+      <div class="relative rounded-lg overflow-hidden shadow-lg cursor-pointer group card-hover" data-aos="zoom-in" data-aos-delay="450">
+       <img alt="Elegant gift box and collectible items for heritage book, antique gold ribbons and natural ivory wrapping paper" class="w-full h-full object-cover img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2bd51d9a-eb86-479c-ba1b-d88b81d20a1c.jpg" width="300"/>
+       <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- The ENAMI Process -->
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-32" id="process">
+   <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center text-[#1C1C1C]" data-aos="fade-up" data-aos-delay="100">
+    The ENAMI Process
+   </h2>
+   <ol aria-label="Steps of the ENAMI process" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <li class="bg-[#F9F5EC] rounded-lg p-6 shadow-md cursor-pointer group card-hover" data-aos="fade-up" data-aos-delay="150">
+     <div aria-hidden="true" class="flex items-center justify-center w-12 h-12 mb-4 rounded-full border-2 border-[#C6A664] text-[#C6A664] text-xl font-semibold group-hover:bg-[#C6A664] group-hover:text-[#1C1C1C] transition-colors duration-300">
+      1
+     </div>
+     <h3 class="font-playfair font-semibold text-xl mb-2 text-[#1C1C1C]">
+      Discovery Call
+     </h3>
+     <p class="text-[#1C1C1C]/90 font-serif">
+      Share your family's vision and history.
+     </p>
+    </li>
+    <li class="bg-[#F9F5EC] rounded-lg p-6 shadow-md cursor-pointer group card-hover" data-aos="fade-up" data-aos-delay="200">
+     <div aria-hidden="true" class="flex items-center justify-center w-12 h-12 mb-4 rounded-full border-2 border-[#C6A664] text-[#C6A664] text-xl font-semibold group-hover:bg-[#C6A664] group-hover:text-[#1C1C1C] transition-colors duration-300">
+      2
+     </div>
+     <h3 class="font-playfair font-semibold text-xl mb-2 text-[#1C1C1C]">
+      Research &amp; Interviews
+     </h3>
+     <p class="text-[#1C1C1C]/90 font-serif">
+      Our experts meticulously gather anecdotes and archives.
+     </p>
+    </li>
+    <li class="bg-[#F9F5EC] rounded-lg p-6 shadow-md cursor-pointer group card-hover" data-aos="fade-up" data-aos-delay="250">
+     <div aria-hidden="true" class="flex items-center justify-center w-12 h-12 mb-4 rounded-full border-2 border-[#C6A664] text-[#C6A664] text-xl font-semibold group-hover:bg-[#C6A664] group-hover:text-[#1C1C1C] transition-colors duration-300">
+      3
+     </div>
+     <h3 class="font-playfair font-semibold text-xl mb-2 text-[#1C1C1C]">
+      Crafting Your Narrative
+     </h3>
+     <p class="text-[#1C1C1C]/90 font-serif">
+      A compelling story woven with elegance and dignity.
+     </p>
+    </li>
+    <li class="bg-[#F9F5EC] rounded-lg p-6 shadow-md cursor-pointer group card-hover" data-aos="fade-up" data-aos-delay="300">
+     <div aria-hidden="true" class="flex items-center justify-center w-12 h-12 mb-4 rounded-full border-2 border-[#C6A664] text-[#C6A664] text-xl font-semibold group-hover:bg-[#C6A664] group-hover:text-[#1C1C1C] transition-colors duration-300">
+      4
+     </div>
+     <h3 class="font-playfair font-semibold text-xl mb-2 text-[#1C1C1C]">
+      Design &amp; Illustration
+     </h3>
+     <p class="text-[#1C1C1C]/90 font-serif">
+      Bespoke artwork bringing your lineage to life.
+     </p>
+    </li>
+    <li class="bg-[#F9F5EC] rounded-lg p-6 shadow-md cursor-pointer group card-hover" data-aos="fade-up" data-aos-delay="350">
+     <div aria-hidden="true" class="flex items-center justify-center w-12 h-12 mb-4 rounded-full border-2 border-[#C6A664] text-[#C6A664] text-xl font-semibold group-hover:bg-[#C6A664] group-hover:text-[#1C1C1C] transition-colors duration-300">
+      5
+     </div>
+     <h3 class="font-playfair font-semibold text-xl mb-2 text-[#1C1C1C]">
+      Luxury Production
+     </h3>
+     <p class="text-[#1C1C1C]/90 font-serif">
+      Your heritage book, a masterpiece, meticulously printed.
+     </p>
+    </li>
+    <li class="bg-[#F9F5EC] rounded-lg p-6 shadow-md cursor-pointer group card-hover" data-aos="fade-up" data-aos-delay="400">
+     <div aria-hidden="true" class="flex items-center justify-center w-12 h-12 mb-4 rounded-full border-2 border-[#C6A664] text-[#C6A664] text-xl font-semibold group-hover:bg-[#C6A664] group-hover:text-[#1C1C1C] transition-colors duration-300">
+      6
+     </div>
+     <h3 class="font-playfair font-semibold text-xl mb-2 text-[#1C1C1C]">
+      Presentation
+     </h3>
+     <p class="text-[#1C1C1C]/90 font-serif">
+      A timeless treasure, delivered to your family.
+     </p>
+    </li>
+   </ol>
+  </section>
+  <!-- Our Expert Storytellers & Designers -->
+  <section class="bg-[#F9F5EC] py-20 px-6" id="team">
+   <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center text-[#1C1C1C]" data-aos="fade-up" data-aos-delay="100">
+     Our Expert Storytellers &amp; Designers
+    </h2>
+    <div aria-label="Team members" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+     <article aria-describedby="bio1" class="group cursor-pointer rounded-lg overflow-hidden shadow-lg bg-white card-hover" data-aos="fade-up" data-aos-delay="150" tabindex="0">
+      <img alt="Professional headshot of a middle-aged African woman storyteller with warm smile, elegant attire, soft natural lighting" class="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition duration-500 img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1a33e093-5103-4345-45ab-0deb8bbf4769.jpg" width="400"/>
+      <div class="p-4">
+       <h3 class="font-playfair font-semibold text-xl text-[#1C1C1C] mb-1">
+        Amina K. Mensah
+       </h3>
+       <p class="text-[#1C1C1C]/80 font-serif text-sm" id="bio1">
+        Lead Storyteller with 15 years of experience preserving African oral histories and crafting compelling family narratives.
+       </p>
+      </div>
+     </article>
+     <article aria-describedby="bio2" class="group cursor-pointer rounded-lg overflow-hidden shadow-lg bg-white card-hover" data-aos="fade-up" data-aos-delay="200" tabindex="0">
+      <img alt="Professional headshot of a young African male designer with glasses, focused expression, studio background" class="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition duration-500 img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/58cedacb-d40b-41e0-0426-89b620f2d964.jpg" width="400"/>
+      <div class="p-4">
+       <h3 class="font-playfair font-semibold text-xl text-[#1C1C1C] mb-1">
+        Kwame Osei
+       </h3>
+       <p class="text-[#1C1C1C]/80 font-serif text-sm" id="bio2">
+        Senior Designer specializing in bespoke book layouts and elegant illustrations that bring stories to life.
+       </p>
+      </div>
+     </article>
+     <article aria-describedby="bio3" class="group cursor-pointer rounded-lg overflow-hidden shadow-lg bg-white card-hover" data-aos="fade-up" data-aos-delay="250" tabindex="0">
+      <img alt="Professional headshot of an elder African woman storyteller with dignified expression, traditional attire, warm lighting" class="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition duration-500 img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/6726d009-74a7-4e04-d99d-15d629d61b6c.jpg" width="400"/>
+      <div class="p-4">
+       <h3 class="font-playfair font-semibold text-xl text-[#1C1C1C] mb-1">
+        Nia Abena
+       </h3>
+       <p class="text-[#1C1C1C]/80 font-serif text-sm" id="bio3">
+        Cultural Historian and Storyteller dedicated to preserving ancestral legacies through oral and written traditions.
+       </p>
+      </div>
+     </article>
+     <article aria-describedby="bio4" class="group cursor-pointer rounded-lg overflow-hidden shadow-lg bg-white card-hover" data-aos="fade-up" data-aos-delay="300" tabindex="0">
+      <img alt="Professional headshot of a female African designer with creative expression, modern studio background" class="w-full h-64 object-cover grayscale group-hover:grayscale-0 transition duration-500 img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/7ad4d185-e9c3-4386-6414-538bc9a8a367.jpg" width="400"/>
+      <div class="p-4">
+       <h3 class="font-playfair font-semibold text-xl text-[#1C1C1C] mb-1">
+        Zola Nkrumah
+       </h3>
+       <p class="text-[#1C1C1C]/80 font-serif text-sm" id="bio4">
+        Illustrator and Graphic Designer passionate about creating heirloom-quality artwork for heritage books.
+       </p>
+      </div>
+     </article>
+    </div>
+   </div>
+  </section>
+  <!-- The ENAMI Difference -->
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-32" id="difference">
+   <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center text-[#1C1C1C]" data-aos="fade-up" data-aos-delay="100">
+    The ENAMI Difference
+   </h2>
+   <div aria-label="ENAMI unique value points" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+    <div class="group rounded-lg border border-[#C6A664] p-6 text-center cursor-pointer transition-colors duration-300 hover:bg-[#C6A664] hover:text-[#1C1C1C] card-hover" data-aos="fade-right" data-aos-delay="150">
+     <i aria-hidden="true" class="fas fa-user-edit text-5xl mb-4 transition-colors duration-300 group-hover:text-[#1C1C1C]">
+     </i>
+     <h3 class="font-playfair font-semibold text-xl mb-2">
+      Personalized Approach
+     </h3>
+     <p class="font-serif text-sm">
+      Every story is unique, so is every book.
+     </p>
+    </div>
+    <div class="group rounded-lg border border-[#C6A664] p-6 text-center cursor-pointer transition-colors duration-300 hover:bg-[#C6A664] hover:text-[#1C1C1C] card-hover" data-aos="fade-right" data-aos-delay="200">
+     <i aria-hidden="true" class="fas fa-globe-africa text-5xl mb-4 transition-colors duration-300 group-hover:text-[#1C1C1C]">
+     </i>
+     <h3 class="font-playfair font-semibold text-xl mb-2">
+      African Heritage Focus
+     </h3>
+     <p class="font-serif text-sm">
+      Dedicated to preserving the rich tapestry of African legacies.
+     </p>
+    </div>
+    <div class="group rounded-lg border border-[#C6A664] p-6 text-center cursor-pointer transition-colors duration-300 hover:bg-[#C6A664] hover:text-[#1C1C1C] card-hover" data-aos="fade-left" data-aos-delay="250">
+     <i aria-hidden="true" class="fas fa-crown text-5xl mb-4 transition-colors duration-300 group-hover:text-[#1C1C1C]">
+     </i>
+     <h3 class="font-playfair font-semibold text-xl mb-2">
+      Unrivaled Craftsmanship
+     </h3>
+     <p class="font-serif text-sm">
+      Heirloom quality, designed to last generations.
+     </p>
+    </div>
+    <div class="group rounded-lg border border-[#C6A664] p-6 text-center cursor-pointer transition-colors duration-300 hover:bg-[#C6A664] hover:text-[#1C1C1C] card-hover" data-aos="fade-left" data-aos-delay="300">
+     <i aria-hidden="true" class="fas fa-layer-group text-5xl mb-4 transition-colors duration-300 group-hover:text-[#1C1C1C]">
+     </i>
+     <h3 class="font-playfair font-semibold text-xl mb-2">
+      Beyond the Book
+     </h3>
+     <p class="font-serif text-sm">
+      Integrating digital archives and multimedia.
+     </p>
+    </div>
+   </div>
+  </section>
+  <!-- Gifting a Legacy -->
+  <section class="bg-[#1C1C1C] text-[#F9F5EC] py-20 px-6" id="gifting">
+   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6" data-aos="fade-up" data-aos-delay="100">
+     <h2 class="text-4xl font-playfair font-bold">
+      Give the Gift of Immortality.
+     </h2>
+     <p class="text-lg font-serif max-w-lg">
+      A unique and profound gift that honors heritage and creates lasting memories for generations to come.
+     </p>
+     <div class="flex flex-wrap gap-6 mt-6">
+      <a class="inline-block rounded-md bg-[#C6A664] px-6 py-3 text-[#1C1C1C] font-semibold text-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#C6A664]/70" href="#contact" data-aos="fade-right" data-aos-delay="200">
+       Purchase a Gift Certificate
+      </a>
+      <a class="inline-block rounded-md border-2 border-[#C6A664] px-6 py-3 text-[#C6A664] font-semibold text-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-4 focus:ring-[#C6A664]/70" href="#gifting" data-aos="fade-left" data-aos-delay="250">
+       Learn About Gifting Options
+      </a>
+     </div>
+    </div>
+    <div class="relative rounded-lg overflow-hidden shadow-lg cursor-pointer group max-w-md mx-auto card-hover" data-aos="fade-up" data-aos-delay="300">
+     <img alt="High-end gift packaging of heritage book with antique gold ribbons and natural ivory wrapping paper, elegant and luxurious presentation" class="w-full h-full object-cover img-hover-zoom" height="800" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e0c6845c-88d4-4f76-5552-9d50b6b2d793.jpg" width="600"/>
+     <div aria-hidden="true" class="absolute top-4 right-4 text-[#C6A664] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      <i class="fas fa-star sparkle fa-2x animate-pulse">
+      </i>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Testimonials & Sample Pages -->
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-32" id="testimonials">
+   <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center text-[#1C1C1C]" data-aos="fade-up" data-aos-delay="100">
+    Testimonials &amp; Sample Pages
+   </h2>
+   <div class="space-y-16">
+    <!-- Testimonials Carousel -->
+    <div class="relative" data-aos="fade-right" data-aos-delay="150">
+     <div aria-label="Client testimonials carousel" class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory gap-8" id="testimonial-carousel" tabindex="0">
+      <blockquote class="snap-center flex-shrink-0 w-80 md:w-96 bg-[#F9F5EC] rounded-lg p-8 shadow-lg text-[#1C1C1C] font-serif relative card-hover" data-aos="zoom-in" data-aos-delay="200">
+       <p class="text-lg italic mb-4">
+        "Receiving our ENAMI heritage book was a deeply moving experience. It brought tears to my eyes and connected me to my ancestors in a way I never imagined."
+       </p>
+       <footer class="text-sm font-semibold text-[#C6A664]">
+        – Nana Ama, Accra
+       </footer>
+      </blockquote>
+      <blockquote class="snap-center flex-shrink-0 w-80 md:w-96 bg-[#F9F5EC] rounded-lg p-8 shadow-lg text-[#1C1C1C] font-serif relative card-hover" data-aos="zoom-in" data-aos-delay="250">
+       <p class="text-lg italic mb-4">
+        "The craftsmanship and storytelling are unparalleled. Our family now has a timeless treasure to pass down."
+       </p>
+       <footer class="text-sm font-semibold text-[#C6A664]">
+        – Thabo M., Johannesburg
+       </footer>
+      </blockquote>
+      <blockquote class="snap-center flex-shrink-0 w-80 md:w-96 bg-[#F9F5EC] rounded-lg p-8 shadow-lg text-[#1C1C1C] font-serif relative card-hover" data-aos="zoom-in" data-aos-delay="300">
+       <p class="text-lg italic mb-4">
+        "The discovery call and process were so personal and respectful. I felt truly heard and honored."
+       </p>
+       <footer class="text-sm font-semibold text-[#C6A664]">
+        – Fatima S., Lagos
+       </footer>
+      </blockquote>
+     </div>
+     <button aria-label="Previous testimonial" class="absolute top-1/2 left-0 -translate-y-1/2 bg-[#C6A664] text-[#1C1C1C] rounded-full p-3 shadow-md hover:bg-[#b5944f] focus:outline-none focus:ring-2 focus:ring-[#C6A664]" id="testimonial-prev">
+      <i class="fas fa-chevron-left">
+      </i>
+     </button>
+     <button aria-label="Next testimonial" class="absolute top-1/2 right-0 -translate-y-1/2 bg-[#C6A664] text-[#1C1C1C] rounded-full p-3 shadow-md hover:bg-[#b5944f] focus:outline-none focus:ring-2 focus:ring-[#C6A664]" id="testimonial-next">
+      <i class="fas fa-chevron-right">
+      </i>
+     </button>
+    </div>
+    <!-- Video/Audio Reactions -->
+    <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="350">
+     <video aria-label="Video of grandmother discovering the heritage book, emotional reaction" class="w-full rounded-lg shadow-lg" controls="" src="https://placehold.co/video/800x450?text=Grandmother+Discovering+Book">
+     </video>
+    </div>
+    <!-- Sample Pages Gallery -->
+    <div aria-label="Sample pages gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6" data-aos="fade-left" data-aos-delay="400">
+     <div aria-describedby="sample1-desc" class="relative rounded-lg overflow-hidden cursor-pointer group border-2 border-transparent hover:border-[#C6A664] card-hover" tabindex="0">
+      <img alt="Blurred sample page of heritage book showing elegant calligraphy and illustrations, antique gold and black color scheme" class="w-full h-full object-cover filter blur-sm transition duration-300 group-hover:blur-0 img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/14bfa876-add1-4e33-4c35-d2f12eaa2ff1.jpg" width="300"/>
+      <div aria-hidden="true" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-30">
+       <i class="fas fa-search text-3xl text-[#C6A664]">
+       </i>
+      </div>
+      <span class="sr-only" id="sample1-desc">
+       Sample page 1 details
+      </span>
+     </div>
+     <div aria-describedby="sample2-desc" class="relative rounded-lg overflow-hidden cursor-pointer group border-2 border-transparent hover:border-[#C6A664] card-hover" tabindex="0">
+      <img alt="Blurred sample page of heritage book showing family tree and timeline, antique gold and black color scheme" class="w-full h-full object-cover filter blur-sm transition duration-300 group-hover:blur-0 img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/d337dba7-954f-4cab-c443-72b8552e33df.jpg" width="300"/>
+      <div aria-hidden="true" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-30">
+       <i class="fas fa-search text-3xl text-[#C6A664]">
+       </i>
+      </div>
+      <span class="sr-only" id="sample2-desc">
+       Sample page 2 details
+      </span>
+     </div>
+     <div aria-describedby="sample3-desc" class="relative rounded-lg overflow-hidden cursor-pointer group border-2 border-transparent hover:border-[#C6A664] card-hover" tabindex="0">
+      <img alt="Blurred sample page of heritage book showing illustrated ancestors and calligraphy, antique gold and ivory color scheme" class="w-full h-full object-cover filter blur-sm transition duration-300 group-hover:blur-0 img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/c7c6d1b7-b55b-4da9-fd03-4c5fef8c02e7.jpg" width="300"/>
+      <div aria-hidden="true" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-30">
+       <i class="fas fa-search text-3xl text-[#C6A664]">
+       </i>
+      </div>
+      <span class="sr-only" id="sample3-desc">
+       Sample page 3 details
+      </span>
+     </div>
+     <div aria-describedby="sample4-desc" class="relative rounded-lg overflow-hidden cursor-pointer group border-2 border-transparent hover:border-[#C6A664] card-hover" tabindex="0">
+      <img alt="Blurred sample page of heritage book showing family anecdotes and elegant typography, antique gold and ivory color scheme" class="w-full h-full object-cover filter blur-sm transition duration-300 group-hover:blur-0 img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/373ec3c9-157b-4ee0-8119-722562d472ef.jpg" width="300"/>
+      <div aria-hidden="true" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-30">
+       <i class="fas fa-search text-3xl text-[#C6A664]">
+       </i>
+      </div>
+      <span class="sr-only" id="sample4-desc">
+       Sample page 4 details
+      </span>
+     </div>
+     <div aria-describedby="sample5-desc" class="relative rounded-lg overflow-hidden cursor-pointer group border-2 border-transparent hover:border-[#C6A664] card-hover" tabindex="0">
+      <img alt="Blurred sample page of heritage book showing elegant illustrations and family timeline, antique gold and black color scheme" class="w-full h-full object-cover filter blur-sm transition duration-300 group-hover:blur-0 img-hover-zoom" height="400" loading="lazy" src="https://storage.googleapis.com/a1aa/image/25449557-eb1d-4386-af60-bb70211502bf.jpg" width="300"/>
+      <div aria-hidden="true" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-30">
+       <i class="fas fa-search text-3xl text-[#C6A664]">
+       </i>
+      </div>
+      <span class="sr-only" id="sample5-desc">
+       Sample page 5 details
+      </span>
+     </div>
+    </div>
+   </div>
+   <script>
+    // Simple carousel controls for testimonials
+      const carousel = document.getElementById('testimonial-carousel');
+      const prevBtn = document.getElementById('testimonial-prev');
+      const nextBtn = document.getElementById('testimonial-next');
+
+      prevBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: -carousel.offsetWidth, behavior: 'smooth' });
+      });
+      nextBtn.addEventListener('click', () => {
+        carousel.scrollBy({ left: carousel.offsetWidth, behavior: 'smooth' });
+      });
+   </script>
+  </section>
+  <!-- Press & Features -->
+  <section class="bg-[#F9F5EC] py-20 px-6" id="press">
+   <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center text-[#1C1C1C]" data-aos="fade-up" data-aos-delay="100">
+     Press &amp; Features
+    </h2>
+    <div aria-label="Press logos carousel" class="flex overflow-x-auto no-scrollbar gap-12 items-center justify-center" data-aos="fade-up" data-aos-delay="200">
+     <a aria-label="Read article on The Heritage Times" class="flex-shrink-0 grayscale hover:grayscale-0 transition duration-300 card-hover" href="https://example.com/article1" rel="noopener noreferrer" target="_blank">
+      <img alt="Logo of The Heritage Times, black and antique gold colors" class="h-20 object-contain" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/fd36ccc2-be54-43e5-9722-3764794f24fa.jpg" width="150"/>
+     </a>
+     <a aria-label="Read article on Legacy Magazine" class="flex-shrink-0 grayscale hover:grayscale-0 transition duration-300 card-hover" href="https://example.com/article2" rel="noopener noreferrer" target="_blank">
+      <img alt="Logo of Legacy Magazine, antique gold and black colors" class="h-20 object-contain" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/f9c78c8a-88ad-44ca-5d2a-46d7ce00ee00.jpg" width="150"/>
+     </a>
+     <a aria-label="Read article on Ancestry Today" class="flex-shrink-0 grayscale hover:grayscale-0 transition duration-300 card-hover" href="https://example.com/article3" rel="noopener noreferrer" target="_blank">
+      <img alt="Logo of Ancestry Today, black and ivory colors" class="h-20 object-contain" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/40476e49-a4fa-438f-323d-5a44cea53f1b.jpg" width="150"/>
+     </a>
+     <a aria-label="Read article on Heritage &amp; Legacy" class="flex-shrink-0 grayscale hover:grayscale-0 transition duration-300 card-hover" href="https://example.com/article4" rel="noopener noreferrer" target="_blank">
+      <img alt="Logo of Heritage &amp; Legacy, antique gold and ivory colors" class="h-20 object-contain" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/700807e2-5def-422d-40aa-d838808638e8.jpg" width="150"/>
+     </a>
+    </div>
+   </div>
+  </section>
+  <!-- Frequently Asked Questions -->
+  <section class="max-w-7xl mx-auto px-6 py-20 md:py-32" id="faq">
+   <h2 class="text-3xl md:text-4xl font-playfair font-bold mb-12 text-center text-[#1C1C1C]" data-aos="fade-up" data-aos-delay="100">
+    Frequently Asked Questions
+   </h2>
+   <div class="max-w-3xl mx-auto space-y-4" data-aos="fade-up" data-aos-delay="150">
+    <details class="border border-[#C6A664] rounded-lg p-4 group" open="">
+     <summary aria-controls="faq1-desc" aria-expanded="true" class="cursor-pointer font-semibold text-lg flex items-center justify-between text-[#1C1C1C] group-open:text-[#C6A664] transition-colors duration-300" role="button" tabindex="0">
+      How long does the process take?
+      <i class="fas fa-chevron-down ml-4 transition-transform duration-300 group-open:rotate-180">
+      </i>
+     </summary>
+     <p class="mt-2 text-[#1C1C1C]/90 font-serif" id="faq1-desc">
+      The entire process typically takes 3 to 6 months, depending on the depth of research and customization.
+     </p>
+    </details>
+    <details class="border border-[#C6A664] rounded-lg p-4 group">
+     <summary aria-controls="faq2-desc" aria-expanded="false" class="cursor-pointer font-semibold text-lg flex items-center justify-between text-[#1C1C1C] group-open:text-[#C6A664] transition-colors duration-300" role="button" tabindex="0">
+      What kind of information do you need?
+      <i class="fas fa-chevron-down ml-4 transition-transform duration-300 group-open:rotate-180">
+      </i>
+     </summary>
+     <p class="mt-2 text-[#1C1C1C]/90 font-serif" id="faq2-desc">
+      We gather stories, photos, documents, and any family archives you can provide, supplemented by interviews and research.
+     </p>
+    </details>
+    <details class="border border-[#C6A664] rounded-lg p-4 group">
+     <summary aria-controls="faq3-desc" aria-expanded="false" class="cursor-pointer font-semibold text-lg flex items-center justify-between text-[#1C1C1C] group-open:text-[#C6A664] transition-colors duration-300" role="button" tabindex="0">
+      Can I include my own photos?
+      <i class="fas fa-chevron-down ml-4 transition-transform duration-300 group-open:rotate-180">
+      </i>
+     </summary>
+     <p class="mt-2 text-[#1C1C1C]/90 font-serif" id="faq3-desc">
+      Absolutely. Your personal photos and memorabilia are essential to creating a rich, authentic narrative.
+     </p>
+    </details>
+    <details class="border border-[#C6A664] rounded-lg p-4 group">
+     <summary aria-controls="faq4-desc" aria-expanded="false" class="cursor-pointer font-semibold text-lg flex items-center justify-between text-[#1C1C1C] group-open:text-[#C6A664] transition-colors duration-300" role="button" tabindex="0">
+      What are the payment options?
+      <i class="fas fa-chevron-down ml-4 transition-transform duration-300 group-open:rotate-180">
+      </i>
+     </summary>
+     <p class="mt-2 text-[#1C1C1C]/90 font-serif" id="faq4-desc">
+      We accept major credit cards, bank transfers, and offer payment plans for your convenience.
+     </p>
+    </details>
+    <details class="border border-[#C6A664] rounded-lg p-4 group">
+     <summary aria-controls="faq5-desc" aria-expanded="false" class="cursor-pointer font-semibold text-lg flex items-center justify-between text-[#1C1C1C] group-open:text-[#C6A664] transition-colors duration-300" role="button" tabindex="0">
+      Is international shipping available?
+      <i class="fas fa-chevron-down ml-4 transition-transform duration-300 group-open:rotate-180">
+      </i>
+     </summary>
+     <p class="mt-2 text-[#1C1C1C]/90 font-serif" id="faq5-desc">
+      Yes, we ship worldwide with secure and insured delivery options.
+     </p>
+    </details>
+   </div>
+  </section>
+  <!-- Call to Action / Contact Us with Contact Info and Map, form one column -->
+  <section
+    class="bg-[#C6A664] text-[#1C1C1C] py-20 px-6"
+    id="contact"
+  >
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div class="flex flex-col justify-center" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="text-4xl font-playfair font-bold mb-8 text-center lg:text-left">
+          Begin Your Family's Timeless Legacy.
+        </h2>
+        <div class="max-w-xl mx-auto lg:mx-0">
+          <h3 class="text-2xl font-playfair font-semibold mb-6 text-center lg:text-left">
+            Contact Information
+          </h3>
+          <ul class="space-y-4 text-[#1C1C1C] font-serif text-lg">
+            <li class="flex items-center gap-4">
+              <i class="fas fa-map-marker-alt text-[#1C1C1C] text-xl w-6"></i>
+              <span>123 Legacy Lane, Accra, Ghana</span>
+            </li>
+            <li class="flex items-center gap-4">
+              <i class="fas fa-phone-alt text-[#1C1C1C] text-xl w-6"></i>
+              <a class="hover:underline" href="tel:+233123456789">+233 123 456 789</a>
+            </li>
+            <li class="flex items-center gap-4">
+              <i class="fas fa-envelope text-[#1C1C1C] text-xl w-6"></i>
+              <a class="hover:underline" href="mailto:contact@enami.com">contact@enami.com</a>
+            </li>
+            <li class="flex items-center gap-4">
+              <i class="fas fa-clock text-[#1C1C1C] text-xl w-6"></i>
+              <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+            </li>
+          </ul>
+          <div class="mt-12 map-container" data-aos="fade-up" data-aos-delay="250">
+            <iframe
+              allowfullscreen
+              aria-label="Map showing ENAMI office location at 123 Legacy Lane, Accra, Ghana"
+              loading="lazy"
+              src="https://maps.google.com/maps?q=123%20Legacy%20Lane,%20Accra,%20Ghana&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              title="ENAMI Location Map"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+      <form
+        action="#"
+        aria-label="Contact form to begin legacy book process"
+        class="bg-[#F9F5EC] rounded-lg p-8 shadow-lg max-w-xl mx-auto lg:mx-0"
+        data-aos="fade-up"
+        data-aos-delay="300"
+        method="POST"
+      >
+        <div class="flex flex-col gap-6">
+          <div>
+            <label
+              class="block text-sm font-semibold mb-2 text-[#1C1C1C]"
+              for="name"
+              >Name</label
+            >
+            <input
+              class="w-full rounded-md border border-[#C6A664] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1C1C1C] focus:border-[#1C1C1C]"
+              id="name"
+              name="name"
+              placeholder="Your full name"
+              required
+              type="text"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-semibold mb-2 text-[#1C1C1C]"
+              for="email"
+              >Email</label
+            >
+            <input
+              class="w-full rounded-md border border-[#C6A664] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1C1C1C] focus:border-[#1C1C1C]"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              type="email"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-semibold mb-2 text-[#1C1C1C]"
+              for="phone"
+              >Phone</label
+            >
+            <input
+              class="w-full rounded-md border border-[#C6A664] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1C1C1C] focus:border-[#1C1C1C]"
+              id="phone"
+              name="phone"
+              placeholder="+123 456 7890"
+              type="tel"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-semibold mb-2 text-[#1C1C1C]"
+              for="message"
+              >Message</label
+            >
+            <textarea
+              class="w-full rounded-md border border-[#C6A664] px-4 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-[#1C1C1C] focus:border-[#1C1C1C]"
+              id="message"
+              name="message"
+              placeholder="Tell us about your family or ask a question"
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <button
+            class="inline-block rounded-md bg-[#1C1C1C] px-10 py-3 text-[#C6A664] font-semibold text-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-[#1C1C1C]/70"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-[#1C1C1C] text-[#F9F5EC] py-16 px-6" data-aos="fade" data-aos-delay="100">
+   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div>
+      <a
+        aria-label="ENAMI Home"
+        href="#home"
+        class="flex items-center space-x-3 py-12"
+      >
+        <img
+          id="logo-img"
+          src="https://storage.googleapis.com/a1aa/image/005e436d-6423-42bb-912a-72060bfdc95e.jpg"
+          alt="ENAMI logo in Antique Gold color, minimalist monogram with stylized E and N intertwined resembling an open book"
+          width="120"
+          height="40"
+          class="hidden h-10 md:h-12 transition-all duration-300"
+        />
+        <span class="logo-font text-[#C6A664] text-xl md:text-2xl font-bold select-none">
+          ENAMI
+        </span>
+      </a>
+     <p class="text-[#C6A664] font-serif max-w-xs">
+      ENAMI creates personalized heritage books that preserve your family's legacy with elegance and dignity.
+     </p>
+     <div class="flex space-x-6 mt-6 text-[#C6A664]">
+      <a aria-label="ENAMI Facebook" class="hover:text-[#b5944f] transition-colors" href="https://facebook.com/enami" rel="noopener noreferrer" target="_blank">
+       <i class="fab fa-facebook-f fa-lg">
+       </i>
+      </a>
+      <a aria-label="ENAMI Instagram" class="hover:text-[#b5944f] transition-colors" href="https://instagram.com/enami" rel="noopener noreferrer" target="_blank">
+       <i class="fab fa-instagram fa-lg">
+       </i>
+      </a>
+      <a aria-label="ENAMI LinkedIn" class="hover:text-[#b5944f] transition-colors" href="https://linkedin.com/company/enami" rel="noopener noreferrer" target="_blank">
+       <i class="fab fa-linkedin-in fa-lg">
+       </i>
+      </a>
+     </div>
+    </div>
+    <div>
+     <h3 class="font-playfair font-semibold text-xl mb-6 border-b border-[#C6A664] pb-2">
+      Quick Links
+     </h3>
+     <ul class="space-y-4 text-[#F9F5EC] font-serif">
+      <li>
+       <a class="hover:underline hover:text-[#C6A664] transition-colors duration-300" href="#home">
+        Home
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline hover:text-[#C6A664] transition-colors duration-300" href="#our-concept">
+        Our Concept / About Us
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline hover:text-[#C6A664] transition-colors duration-300" href="#what-you-receive">
+        What You Receive
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline hover:text-[#C6A664] transition-colors duration-300" href="#process">
+        The ENAMI Process
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline hover:text-[#C6A664] transition-colors duration-300" href="#testimonials">
+        Testimonials
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline hover:text-[#C6A664] transition-colors duration-300" href="#gifting">
+        Gifting a Legacy
+       </a>
+      </li>
+      <li>
+       <a class="hover:underline hover:text-[#C6A664] transition-colors duration-300" href="#contact">
+        Contact Us
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h3 class="font-playfair font-semibold text-xl mb-6 border-b border-[#C6A664] pb-2">
+      Contact Info
+     </h3>
+     <ul class="space-y-4 text-[#F9F5EC] font-serif">
+      <li class="flex items-center gap-4">
+       <i class="fas fa-map-marker-alt text-[#C6A664] text-xl w-6"></i>
+       <span>123 Legacy Lane, Accra, Ghana</span>
+      </li>
+      <li class="flex items-center gap-4">
+       <i class="fas fa-phone-alt text-[#C6A664] text-xl w-6"></i>
+       <a class="hover:underline" href="tel:+233123456789">+233 123 456 789</a>
+      </li>
+      <li class="flex items-center gap-4">
+       <i class="fas fa-envelope text-[#C6A664] text-xl w-6"></i>
+       <a class="hover:underline" href="mailto:contact@enami.com">contact@enami.com</a>
+      </li>
+      <li class="flex items-center gap-4">
+       <i class="fas fa-clock text-[#C6A664] text-xl w-6"></i>
+       <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+      </li>
+     </ul>
+    </div>
+    <div>
+     <h3 class="font-playfair font-semibold text-xl mb-6 border-b border-[#C6A664] pb-2">
+      Newsletter
+     </h3>
+     <p class="text-[#C6A664] font-serif mb-6 max-w-sm">
+      Subscribe to receive updates, stories, and exclusive offers from ENAMI.
+     </p>
+     <form action="#" class="flex max-w-sm" method="POST" aria-label="Newsletter subscription form" data-aos="fade-up" data-aos-delay="200">
+      <input aria-label="Email address" class="w-full rounded-l-md border border-[#C6A664] px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#C6A664] focus:border-[#C6A664]" placeholder="Your email address" required="" type="email"/>
+      <button class="rounded-r-md bg-[#C6A664] px-6 py-2 font-semibold text-[#1C1C1C] hover:bg-[#b5944f] transition-colors focus:outline-none focus:ring-2 focus:ring-[#C6A664]" type="submit">
+       Subscribe
+      </button>
+     </form>
+    </div>
+   </div>
+   <div class="mt-12 border-t border-[#C6A664]/50 pt-6 text-center text-sm text-[#C6A664] font-serif select-none" data-aos="fade-up" data-aos-delay="250">
+    © 2024 ENAMI. All rights reserved.
+   </div>
+  </footer>
+ </body>
+</html>

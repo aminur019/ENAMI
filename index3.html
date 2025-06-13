@@ -1,0 +1,1748 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   ENAMI - Preserve Your Family Legacy in Timeless Heritage Books
+  </title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Poppins:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+        font-family: "Poppins", sans-serif;
+        color: #1c1c1c;
+        background-color: #f9f5ec;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Playfair Display", serif;
+      }
+      .gold-accent {
+        color: #c6a664;
+      }
+      .gold-border {
+        border-color: #c6a664;
+      }
+      .gold-bg {
+        background-color: #c6a664;
+      }
+      .dark-bg {
+        background-color: #1c1c1c;
+        color: #f9f5ec;
+      }
+      .hero-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        opacity: 0.8;
+      }
+      .hero-overlay {
+        background: rgba(28, 28, 28, 0.5);
+      }
+      .hover-glow:hover {
+        box-shadow: 0 0 15px rgba(198, 166, 100, 0.5);
+      }
+      .hover-scale:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+      }
+      .underline-animation {
+        position: relative;
+        display: inline-block;
+      }
+      .underline-animation:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #c6a664;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      .underline-animation:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+      .blur-sample {
+        filter: blur(3px);
+        transition: filter 0.3s ease;
+      }
+      .blur-sample:hover {
+        filter: blur(0);
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .price-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .popular-badge {
+        position: absolute;
+        top: -15px;
+        right: 20px;
+        background-color: #c6a664;
+        color: #1c1c1c;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+      .nav-link {
+        position: relative;
+        padding-bottom: 5px;
+      }
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #c6a664;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover:after {
+        width: 100%;
+      }
+      .footer-link {
+        transition: all 0.3s ease;
+      }
+      .footer-link:hover {
+        color: #c6a664;
+        transform: translateX(5px);
+      }
+      .contact-info-card {
+        transition: all 0.3s ease;
+      }
+      .contact-info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+  </style>
+       <script>
+        // Right-click নিষ্ক্রিয় করতে
+        document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+        // কীবোর্ড শর্টকাট নিষ্ক্রিয় করতে
+        document.addEventListener('keydown', (event) => {
+            if (
+                (event.ctrlKey && event.key === 's') || // Ctrl+S
+                (event.ctrlKey && event.key === 'u') || // Ctrl+U
+                (event.ctrlKey && event.key === 'c') || // Ctrl+C
+                (event.key === 'F12')                  // F12
+            ) {
+                event.preventDefault();
+                alert("This action is disabled on this website.");
+            }
+        });
+
+        // Address bar থেকে লিংক কপি প্রতিরোধ (Referrer কে হ্যান্ডল করা)
+        window.onload = () => {
+            if (window.location !== window.parent.location) {
+                window.parent.location = window.location;
+            }
+        };
+    </script>
+ </head>
+ <body class="overflow-x-hidden">
+  <!-- Navigation -->
+  <header class="fixed w-full z-50">
+   <nav class="dark-bg py-4 px-6 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+     <div class="flex items-center">
+      <div class="text-2xl font-bold gold-accent mr-2">
+       ENAMI
+      </div>
+      <span class="text-xs text-gray-400 hidden md:block">
+       Heritage Books
+      </span>
+     </div>
+     <div class="hidden md:flex space-x-8 items-center">
+      <a class="text-white nav-link" href="#home">
+       Home
+      </a>
+      <a class="text-white nav-link" href="#about">
+       About
+      </a>
+      <a class="text-white nav-link" href="#features">
+       Features
+      </a>
+      <a class="text-white nav-link" href="#process">
+       Process
+      </a>
+      <a class="text-white nav-link" href="#pricing">
+       Pricing
+      </a>
+      <a class="text-white nav-link" href="#testimonials">
+       Stories
+      </a>
+      <a class="text-white nav-link" href="#contact">
+       Contact
+      </a>
+      <a class="ml-4 px-6 py-2 border border-[#C6A664] text-white hover:bg-[#C6A664] transition duration-300 rounded-full" href="#contact">
+       Get Started
+      </a>
+     </div>
+     <button class="md:hidden text-white text-2xl">
+      <i class="fas fa-bars">
+      </i>
+     </button>
+    </div>
+   </nav>
+  </header>
+  <!-- Hero Section with Image -->
+  <section class="relative h-screen flex flex-col md:flex-row items-center justify-center overflow-hidden pt-16 px-6 md:px-0" id="home">
+   <video autoplay="" class="hero-video hidden md:block" loop="" muted="">
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-man-and-a-child-opening-a-book-17339-large.mp4" type="video/mp4"/>
+   </video>
+   <div class="hero-overlay absolute inset-0 hidden md:block">
+   </div>
+   <div class="container mx-auto z-10 flex flex-col md:flex-row items-center justify-center max-w-7xl gap-12" data-aos="fade-up">
+    <div class="text-center md:text-left max-w-xl md:max-w-lg" data-aos="fade-up" data-aos-delay="100">
+     <span class="text-[#C6A664] uppercase tracking-wider text-sm font-semibold">
+      Preserving African Heritage
+     </span>
+     <h1 class="text-4xl md:text-6xl font-bold text-white md:text-[#1C1C1C] mb-6 leading-tight mt-4 md:mt-6" data-aos="fade-up" data-aos-delay="200">
+      "They passed on a name.
+      <br/>
+      We offer you a memory."
+     </h1>
+     <p class="text-xl md:text-2xl text-white md:text-gray-700 mb-10 max-w-3xl mx-auto md:mx-0" data-aos="fade-up" data-aos-delay="400">
+      One book. One memory. One family forever.
+     </p>
+     <div class="flex flex-col md:flex-row justify-center md:justify-start gap-4" data-aos="fade-up" data-aos-delay="600">
+      <button class="px-8 py-3 border-2 border-[#C6A664] text-white md:text-[#1C1C1C] hover:bg-[#C6A664] hover:text-[#1C1C1C] transition duration-300 hover-glow font-medium rounded-full">
+       Create My Book
+      </button>
+      <button class="px-8 py-3 border-2 border-white bg-transparent text-white md:text-[#1C1C1C] hover:bg-white hover:text-[#1C1C1C] transition duration-300 rounded-full flex items-center justify-center">
+       <i class="fas fa-play mr-2">
+       </i>
+       Watch Our Story
+      </button>
+     </div>
+    </div>
+    <div class="w-full max-w-md md:max-w-lg rounded-lg shadow-xl overflow-hidden" data-aos="zoom-in-right" data-aos-delay="300">
+     <img alt="African family heritage book cover with gold embossed title and traditional cultural patterns, standing upright on a wooden table with soft natural light highlighting the intricate details" class="w-full h-auto object-cover" height="800" src="https://storage.googleapis.com/a1aa/image/bb6c213b-1069-4644-bab9-adc607902d64.jpg" width="600"/>
+    </div>
+   </div>
+   <div class="absolute bottom-10 left-0 right-0 text-center md:hidden" data-aos="fade-up" data-aos-delay="800">
+    <a class="text-white animate-bounce inline-block" href="#about">
+     <i class="fas fa-chevron-down text-2xl">
+     </i>
+    </a>
+   </div>
+  </section>
+  <!-- About Section -->
+  <section class="py-20 bg-[#F9F5EC]" id="about">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <span class="text-[#C6A664] uppercase tracking-wider text-sm font-semibold">
+      Our Mission
+     </span>
+     <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+      Preserving Your Legacy
+     </h2>
+     <div class="w-20 h-1 bg-[#C6A664] mx-auto">
+     </div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center">
+     <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10" data-aos="fade-left">
+      <h3 class="text-2xl font-bold mb-6">
+       Every family has a story. Some were never told.
+      </h3>
+      <p class="text-lg mb-6">
+       At ENAMI, we believe that every African family's history deserves to be preserved with the dignity and reverence it merits. Our heritage books are more than just collections of facts - they're living testaments to the journeys, struggles, and triumphs that shaped your family.
+      </p>
+      <p class="text-lg mb-8">
+       We combine rigorous historical research with beautiful storytelling to create heirloom-quality books that will be treasured for generations. Each book is meticulously crafted to reflect your family's unique narrative and cultural heritage.
+      </p>
+      <div class="flex items-center">
+       <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+        <img alt="Portrait of Kwame Asante, founder and chief historian of ENAMI, a middle-aged African man with a warm smile, wearing traditional attire" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80"/>
+       </div>
+       <div>
+        <p class="font-bold">
+         Kwame Asante
+        </p>
+        <p class="text-sm text-gray-600">
+         Founder &amp; Chief Historian
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="md:w-1/2" data-aos="zoom-in-right">
+      <div class="relative">
+       <img alt="Open family heritage book showing detailed pages with photos and text, resting on a wooden table with soft natural light" class="rounded-lg shadow-xl hover-scale w-full" src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+       <div class="absolute -bottom-6 -right-6 bg-white p-4 shadow-lg rounded-lg w-2/3" data-aos="fade-left" data-aos-delay="300">
+        <div class="flex items-center">
+         <div class="text-3xl gold-accent mr-4">
+          <i class="fas fa-award">
+          </i>
+         </div>
+         <div>
+          <p class="font-bold">
+           Certified Heritage Specialists
+          </p>
+          <p class="text-sm text-gray-600">
+           Recognized by the African Historical Society
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Stats Section -->
+  <section class="py-16 bg-[#1C1C1C] text-white">
+   <div class="container mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+     <div class="p-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="text-4xl gold-accent font-bold mb-2">
+       200+
+      </div>
+      <p class="text-gray-300 uppercase text-sm">
+       Families Served
+      </p>
+     </div>
+     <div class="p-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="text-4xl gold-accent font-bold mb-2">
+       15
+      </div>
+      <p class="text-gray-300 uppercase text-sm">
+       Countries
+      </p>
+     </div>
+     <div class="p-6" data-aos="fade-up" data-aos-delay="300">
+      <div class="text-4xl gold-accent font-bold mb-2">
+       98%
+      </div>
+      <p class="text-gray-300 uppercase text-sm">
+       Satisfaction Rate
+      </p>
+     </div>
+     <div class="p-6" data-aos="fade-up" data-aos-delay="400">
+      <div class="text-4xl gold-accent font-bold mb-2">
+       7
+      </div>
+      <p class="text-gray-300 uppercase text-sm">
+       Generations Traced
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Features Section -->
+  <section class="py-20 bg-white" id="features">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <span class="text-[#C6A664] uppercase tracking-wider text-sm font-semibold">
+      What You Receive
+     </span>
+     <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+      A Treasure for Generations
+     </h2>
+     <div class="w-20 h-1 bg-[#C6A664] mx-auto">
+     </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+     <!-- Feature 1 -->
+     <div class="p-8 border border-gray-100 rounded-lg hover-glow bg-[#F9F5EC]" data-aos="zoom-in-up" data-aos-delay="100">
+      <div class="text-4xl gold-accent mb-4">
+       <i class="fas fa-book-open">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-2">
+       Personalized Hardcover
+      </h3>
+      <p class="text-gray-600 mb-4">
+       Luxury print with your family name embossed in gold leaf, crafted to last generations with archival-quality materials.
+      </p>
+      <ul class="text-sm space-y-2">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Premium linen or leather cover options
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Gold foil stamping
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Acid-free paper
+        </span>
+       </li>
+      </ul>
+     </div>
+     <!-- Feature 2 -->
+     <div class="p-8 border border-gray-100 rounded-lg hover-glow bg-[#F9F5EC]" data-aos="zoom-in-up" data-aos-delay="200">
+      <div class="text-4xl gold-accent mb-4">
+       <i class="fas fa-tree">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-2">
+       Family Tree
+      </h3>
+      <p class="text-gray-600 mb-4">
+       Beautifully illustrated family tree showing connections across generations, with optional historical context.
+      </p>
+      <ul class="text-sm space-y-2">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         3-7 generations displayed
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Cultural motifs and symbols
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Optional framed version available
+        </span>
+       </li>
+      </ul>
+     </div>
+     <!-- Feature 3 -->
+     <div class="p-8 border border-gray-100 rounded-lg hover-glow bg-[#F9F5EC]" data-aos="zoom-in-up" data-aos-delay="300">
+      <div class="text-4xl gold-accent mb-4">
+       <i class="fas fa-qrcode">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-2">
+       QR Code Stories
+      </h3>
+      <p class="text-gray-600 mb-4">
+       Embedded QR codes linking to video/audio recordings of family stories in your loved ones' own voices.
+      </p>
+      <ul class="text-sm space-y-2">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         5-20 stories included
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Hosted securely for 10 years
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Downloadable archive
+        </span>
+       </li>
+      </ul>
+     </div>
+     <!-- Feature 4 -->
+     <div class="p-8 border border-gray-100 rounded-lg hover-glow bg-[#F9F5EC]" data-aos="zoom-in-up" data-aos-delay="100">
+      <div class="text-4xl gold-accent mb-4">
+       <i class="fas fa-timeline">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-2">
+       Ancestral Timeline
+      </h3>
+      <p class="text-gray-600 mb-4">
+       Historical context showing your family's journey through time, connecting personal stories to larger events.
+      </p>
+      <ul class="text-sm space-y-2">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Key historical events
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Migration patterns
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Cultural traditions explained
+        </span>
+       </li>
+      </ul>
+     </div>
+     <!-- Feature 5 -->
+     <div class="p-8 border border-gray-100 rounded-lg hover-glow bg-[#F9F5EC]" data-aos="zoom-in-up" data-aos-delay="200">
+      <div class="text-4xl gold-accent mb-4">
+       <i class="fas fa-box-open">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-2">
+       Archival Gift Box
+      </h3>
+      <p class="text-gray-600 mb-4">
+       Optional presentation box to protect and display your heritage book, crafted from sustainable materials.
+      </p>
+      <ul class="text-sm space-y-2">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Handcrafted wooden or linen box
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Custom engraving available
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Acid-free storage compartments
+        </span>
+       </li>
+      </ul>
+     </div>
+     <!-- Feature 6 -->
+     <div class="p-8 border border-gray-100 rounded-lg hover-glow bg-[#F9F5EC]" data-aos="zoom-in-up" data-aos-delay="300">
+      <div class="text-4xl gold-accent mb-4">
+       <i class="fas fa-child-reaching">
+       </i>
+      </div>
+      <h3 class="text-xl font-bold mb-2">
+       Children's Version
+      </h3>
+      <p class="text-gray-600 mb-4">
+       Simplified edition to help younger generations connect with their heritage through stories and illustrations.
+      </p>
+      <ul class="text-sm space-y-2">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Age-appropriate narratives
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Interactive elements
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Family activity suggestions
+        </span>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Samples & Testimonials -->
+  <section class="py-20 bg-[#F9F5EC]" id="testimonials">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <span class="text-[#C6A664] uppercase tracking-wider text-sm font-semibold">
+      Family Stories
+     </span>
+     <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+      Generations Connected
+     </h2>
+     <div class="w-20 h-1 bg-[#C6A664] mx-auto">
+     </div>
+    </div>
+    <div class="flex flex-col lg:flex-row gap-12">
+     <!-- Samples Column -->
+     <div class="lg:w-1/2" data-aos="fade-right">
+      <div class="grid grid-cols-2 gap-6">
+       <div class="bg-white p-4 rounded-lg shadow-md hover-scale">
+        <img alt="Sample page 1 showing a detailed family tree spread from the Adjei family book with colorful branches and portraits" class="rounded-lg w-full h-64 object-cover blur-sample" src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <p class="mt-4 text-sm text-gray-500">
+         Family tree spread from the Adjei family book
+        </p>
+       </div>
+       <div class="bg-white p-4 rounded-lg shadow-md hover-scale">
+        <img alt="Sample page 2 showing a historical timeline from the Diop family archive with dates and illustrations" class="rounded-lg w-full h-64 object-cover blur-sample" src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <p class="mt-4 text-sm text-gray-500">
+         Historical timeline from the Diop family archive
+        </p>
+       </div>
+       <div class="bg-white p-4 rounded-lg shadow-md hover-scale">
+        <img alt="Sample page 3 showing a story page with QR code from the Ndlovu family, featuring text and a black and white photo" class="rounded-lg w-full h-64 object-cover blur-sample" src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <p class="mt-4 text-sm text-gray-500">
+         Story page with QR code from the Ndlovu family
+        </p>
+       </div>
+       <div class="bg-white p-4 rounded-lg shadow-md hover-scale">
+        <img alt="Sample page 4 showing the children's version from the Okeke family with colorful illustrations and simple text" class="rounded-lg w-full h-64 object-cover blur-sample" src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"/>
+        <p class="mt-4 text-sm text-gray-500">
+         Children's version from the Okeke family
+        </p>
+       </div>
+      </div>
+      <div class="mt-8 text-center">
+       <button class="px-6 py-2 border border-[#C6A664] text-[#C6A664] hover:bg-[#C6A664] hover:text-white transition duration-300 rounded-full">
+        View More Samples
+        <i class="fas fa-arrow-right ml-2">
+        </i>
+       </button>
+      </div>
+     </div>
+     <!-- Testimonials Column -->
+     <div class="lg:w-1/2" data-aos="fade-left">
+      <div class="space-y-6">
+       <!-- Testimonial 1 -->
+       <div class="p-8 bg-white rounded-lg shadow-md hover-scale relative">
+        <div class="absolute -top-4 -left-4 text-5xl gold-accent opacity-20">
+         <i class="fas fa-quote-left">
+         </i>
+        </div>
+        <p class="italic text-lg relative z-10">
+         "When I opened the book, I felt like I was holding my father's spirit again. My children finally understand where they come from and what our name truly means."
+        </p>
+        <div class="flex items-center mt-6">
+         <div class="w-14 h-14 rounded-full bg-gray-300 mr-4 overflow-hidden">
+          <img alt="Portrait of Mrs. Adebayo, a middle-aged African woman with a warm smile" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80"/>
+         </div>
+         <div>
+          <p class="font-bold">
+           Mrs. Adebayo
+          </p>
+          <p class="text-sm text-gray-500">
+           Lagos, Nigeria
+          </p>
+          <div class="flex gold-accent mt-1">
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- Testimonial 2 -->
+       <div class="p-8 bg-white rounded-lg shadow-md hover-scale relative">
+        <div class="absolute -top-4 -left-4 text-5xl gold-accent opacity-20">
+         <i class="fas fa-quote-left">
+         </i>
+        </div>
+        <p class="italic text-lg relative z-10">
+         "Our family was scattered across three continents after the diaspora. This book brought us together in a way I never thought possible. The researchers found connections we didn't know existed."
+        </p>
+        <div class="flex items-center mt-6">
+         <div class="w-14 h-14 rounded-full bg-gray-300 mr-4 overflow-hidden">
+          <img alt="Portrait of Dr. Mensah, a middle-aged African man with glasses and a friendly expression" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80"/>
+         </div>
+         <div>
+          <p class="font-bold">
+           Dr. Mensah
+          </p>
+          <p class="text-sm text-gray-500">
+           Accra, Ghana
+          </p>
+          <div class="flex gold-accent mt-1">
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+          </div>
+         </div>
+        </div>
+       </div>
+       <!-- Testimonial 3 -->
+       <div class="p-8 bg-white rounded-lg shadow-md hover-scale relative">
+        <div class="absolute -top-4 -left-4 text-5xl gold-accent opacity-20">
+         <i class="fas fa-quote-left">
+         </i>
+        </div>
+        <p class="italic text-lg relative z-10">
+         "My grandchildren fight over who gets to read 'their' book first. It's become our most treasured possession. The children's version makes our history accessible in a way they love."
+        </p>
+        <div class="flex items-center mt-6">
+         <div class="w-14 h-14 rounded-full bg-gray-300 mr-4 overflow-hidden">
+          <img alt="Portrait of Grandma Nia, an elderly African woman with a gentle smile" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1584308972278-1e3f8d1b3dc8?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=200&amp;q=80"/>
+         </div>
+         <div>
+          <p class="font-bold">
+           Grandma Nia
+          </p>
+          <p class="text-sm text-gray-500">
+           Nairobi, Kenya
+          </p>
+          <div class="flex gold-accent mt-1">
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star">
+           </i>
+           <i class="fas fa-star-half-alt">
+           </i>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Process Section -->
+  <section class="py-20 bg-white" id="process">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <span class="text-[#C6A664] uppercase tracking-wider text-sm font-semibold">
+      Our Process
+     </span>
+     <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+      From Memory to Masterpiece
+     </h2>
+     <div class="w-20 h-1 bg-[#C6A664] mx-auto">
+     </div>
+    </div>
+    <div class="flex flex-col md:flex-row justify-center gap-8">
+     <!-- Step 1 -->
+     <div class="flex-1 text-center" data-aos="slide-left" data-aos-delay="200">
+      <div class="relative inline-block mb-6">
+       <div class="w-20 h-20 rounded-full bg-[#F9F5EC] flex items-center justify-center text-3xl gold-accent hover-glow">
+        <i class="fas fa-microphone">
+        </i>
+       </div>
+       <div class="absolute -top-3 -right-3 bg-[#C6A664] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
+        1
+       </div>
+      </div>
+      <h3 class="text-2xl font-bold mb-4">
+       Interview
+      </h3>
+      <p class="text-gray-600 mb-4">
+       We conduct in-depth interviews with your family members, either in person or remotely. Our historians guide the conversation to uncover the most meaningful stories.
+      </p>
+      <ul class="text-sm space-y-2 text-gray-500 text-left max-w-xs mx-auto">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         5-20 hours of recorded interviews
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Multi-generational perspectives
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Photo &amp; artifact collection
+        </span>
+       </li>
+      </ul>
+     </div>
+     <!-- Step 2 -->
+     <div class="flex-1 text-center" data-aos="slide-left" data-aos-delay="300">
+      <div class="relative inline-block mb-6">
+       <div class="w-20 h-20 rounded-full bg-[#F9F5EC] flex items-center justify-center text-3xl gold-accent hover-glow">
+        <i class="fas fa-pen-fancy">
+        </i>
+       </div>
+       <div class="absolute -top-3 -right-3 bg-[#C6A664] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
+        2
+       </div>
+      </div>
+      <h3 class="text-2xl font-bold mb-4">
+       Craft
+      </h3>
+      <p class="text-gray-600 mb-4">
+       Our team of writers, historians, and designers transform the raw material into a beautifully illustrated narrative that honors your family's unique story.
+      </p>
+      <ul class="text-sm space-y-2 text-gray-500 text-left max-w-xs mx-auto">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Historical verification
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Cultural consultation
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Multiple review rounds
+        </span>
+       </li>
+      </ul>
+     </div>
+     <!-- Step 3 -->
+     <div class="flex-1 text-center" data-aos="slide-left" data-aos-delay="400">
+      <div class="relative inline-block mb-6">
+       <div class="w-20 h-20 rounded-full bg-[#F9F5EC] flex items-center justify-center text-3xl gold-accent hover-glow">
+        <i class="fas fa-gift">
+        </i>
+       </div>
+       <div class="absolute -top-3 -right-3 bg-[#C6A664] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
+        3
+       </div>
+      </div>
+      <h3 class="text-2xl font-bold mb-4">
+       Deliver
+      </h3>
+      <p class="text-gray-600 mb-4">
+       You receive a luxurious, personalized heritage book to share with current and future generations, along with digital archives of all materials.
+      </p>
+      <ul class="text-sm space-y-2 text-gray-500 text-left max-w-xs mx-auto">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Handcrafted heirloom book
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Digital version with audio
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2 text-xs">
+        </i>
+        <span>
+         Family presentation guide
+        </span>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="mt-16 text-center" data-aos="fade-up">
+     <button class="px-8 py-3 bg-[#C6A664] text-[#1C1C1C] font-bold hover:bg-[#b59458] transition duration-300 rounded-full">
+      Download Our Process Guide
+      <i class="fas fa-download ml-2">
+      </i>
+     </button>
+    </div>
+   </div>
+  </section>
+  <!-- FAQ Section -->
+  <section class="py-20 bg-[#F9F5EC]">
+   <div class="container mx-auto px-6 max-w-4xl">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <span class="text-[#C6A664] uppercase tracking-wider text-sm font-semibold">
+      Need Answers?
+     </span>
+     <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+      Frequently Asked Questions
+     </h2>
+     <div class="w-20 h-1 bg-[#C6A664] mx-auto">
+     </div>
+    </div>
+    <div class="space-y-4">
+     <!-- FAQ Item 1 -->
+     <div class="border-b border-gray-200 pb-4" data-aos="fade-up" data-aos-delay="100">
+      <button class="faq-toggle w-full flex justify-between items-center text-left">
+       <h3 class="text-xl font-bold">
+        How long does it take to create a heritage book?
+       </h3>
+       <i class="fas fa-chevron-down text-[#C6A664] transition-transform duration-300">
+       </i>
+      </button>
+      <div class="accordion-content mt-2">
+       <p class="text-gray-600">
+        The typical timeline is 8-12 weeks from the completion of interviews to delivery. This includes:
+       </p>
+       <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+        <li>
+         2-4 weeks for research and verification
+        </li>
+        <li>
+         3-5 weeks for writing and design
+        </li>
+        <li>
+         2-3 weeks for printing and binding
+        </li>
+       </ul>
+       <p class="text-gray-600 mt-2">
+        Complex family histories or additional research may extend this timeframe. We'll provide a personalized timeline after our initial consultation.
+       </p>
+      </div>
+     </div>
+     <!-- FAQ Item 2 -->
+     <div class="border-b border-gray-200 pb-4" data-aos="fade-up" data-aos-delay="200">
+      <button class="faq-toggle w-full flex justify-between items-center text-left">
+       <h3 class="text-xl font-bold">
+        What if my family is spread across different countries?
+       </h3>
+       <i class="fas fa-chevron-down text-[#C6A664] transition-transform duration-300">
+       </i>
+      </button>
+      <div class="accordion-content mt-2">
+       <p class="text-gray-600">
+        We regularly work with families across continents and have developed efficient processes for international collaboration:
+       </p>
+       <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+        <li>
+         Interviews conducted via secure video calls
+        </li>
+        <li>
+         Coordination across time zones
+        </li>
+        <li>
+         Multilingual interviewers available
+        </li>
+        <li>
+         Digital submission of photos and documents
+        </li>
+        <li>
+         International shipping options
+        </li>
+       </ul>
+       <p class="text-gray-600 mt-2">
+        For physical artifacts, we can arrange secure shipping or work from high-quality scans/photos.
+       </p>
+      </div>
+     </div>
+     <!-- FAQ Item 3 -->
+     <div class="border-b border-gray-200 pb-4" data-aos="fade-up" data-aos-delay="300">
+      <button class="faq-toggle w-full flex justify-between items-center text-left">
+       <h3 class="text-xl font-bold">
+        Can I order multiple copies for different family members?
+       </h3>
+       <i class="fas fa-chevron-down text-[#C6A664] transition-transform duration-300">
+       </i>
+      </button>
+      <div class="accordion-content mt-2">
+       <p class="text-gray-600">
+        Absolutely. Many families order multiple copies for different branches of the family or for each of their children. We offer:
+       </p>
+       <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+        <li>
+         Discounted rates for bulk orders (5+ copies)
+        </li>
+        <li>
+         Customization options for different branches
+        </li>
+        <li>
+         Special inscriptions for gift copies
+        </li>
+        <li>
+         International shipping to multiple addresses
+        </li>
+       </ul>
+      </div>
+     </div>
+     <!-- FAQ Item 4 -->
+     <div class="border-b border-gray-200 pb-4" data-aos="fade-up" data-aos-delay="400">
+      <button class="faq-toggle w-full flex justify-between items-center text-left">
+       <h3 class="text-xl font-bold">
+        How do you verify the accuracy of family stories?
+       </h3>
+       <i class="fas fa-chevron-down text-[#C6A664] transition-transform duration-300">
+       </i>
+      </button>
+      <div class="accordion-content mt-2">
+       <p class="text-gray-600">
+        Our verification process includes:
+       </p>
+       <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+        <li>
+         Cross-referencing oral histories with available records
+        </li>
+        <li>
+         Consulting historical archives and databases
+        </li>
+        <li>
+         Collaborating with regional historians
+        </li>
+        <li>
+         Comparing multiple family accounts
+        </li>
+        <li>
+         Identifying and resolving discrepancies
+        </li>
+       </ul>
+       <p class="text-gray-600 mt-2">
+        You'll have multiple opportunities to review and correct the manuscript before final printing. We clearly distinguish between verified facts and family traditions.
+       </p>
+      </div>
+     </div>
+     <!-- FAQ Item 5 -->
+     <div class="border-b border-gray-200 pb-4" data-aos="fade-up" data-aos-delay="500">
+      <button class="faq-toggle w-full flex justify-between items-center text-left">
+       <h3 class="text-xl font-bold">
+        What languages do you support?
+       </h3>
+       <i class="fas fa-chevron-down text-[#C6A664] transition-transform duration-300">
+       </i>
+      </button>
+      <div class="accordion-content mt-2">
+       <p class="text-gray-600">
+        Our primary working languages are English and French, but we can accommodate:
+       </p>
+       <ul class="list-disc list-inside mt-2 text-gray-600 space-y-1">
+        <li>
+         Full books in English or French
+        </li>
+        <li>
+         Key sections translated to other languages
+        </li>
+        <li>
+         Interviews conducted in most African languages
+        </li>
+        <li>
+         Subtitles for video/audio recordings
+        </li>
+       </ul>
+       <p class="text-gray-600 mt-2">
+        Additional fees may apply for translation services beyond English/French. We work with native-speaking translators to ensure cultural accuracy.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="mt-12 text-center" data-aos="fade-up">
+     <p class="text-gray-600 mb-6">
+      Have more questions?
+     </p>
+     <button class="px-8 py-3 border border-[#C6A664] text-[#C6A664] hover:bg-[#C6A664] hover:text-white transition duration-300 rounded-full">
+      Contact Our Team
+      <i class="fas fa-envelope ml-2">
+      </i>
+     </button>
+    </div>
+   </div>
+  </section>
+  <!-- Pricing Section -->
+  <section class="py-20 bg-white" id="pricing">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <span class="text-[#C6A664] uppercase tracking-wider text-sm font-semibold">
+      Investment
+     </span>
+     <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+      Pricing Plans
+     </h2>
+     <div class="w-20 h-1 bg-[#C6A664] mx-auto">
+     </div>
+     <p class="text-gray-600 max-w-2xl mx-auto mt-6">
+      Choose the package that best fits your family's needs. All plans include our signature quality and care.
+     </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+     <!-- Legacy Edition -->
+     <div class="relative border border-gray-200 rounded-lg p-8 transition-all duration-300 price-card" data-aos="zoom-in-down" data-aos-delay="200">
+      <h3 class="text-2xl font-bold mb-4">
+       Legacy Edition
+      </h3>
+      <p class="text-4xl font-bold gold-accent mb-6">
+       $1,499
+      </p>
+      <p class="text-gray-500 mb-6">
+       Perfect for capturing your immediate family's story
+      </p>
+      <ul class="space-y-3 mb-8">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Up to 50 pages
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         5 hours of interviews
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Family tree (3 generations)
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         5 QR code stories
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         1 luxury hardcover
+        </span>
+       </li>
+       <li class="flex items-start text-gray-400">
+        <i class="fas fa-times mt-1 mr-2">
+        </i>
+        <span>
+         No historical research
+        </span>
+       </li>
+       <li class="flex items-start text-gray-400">
+        <i class="fas fa-times mt-1 mr-2">
+        </i>
+        <span>
+         No digital copy
+        </span>
+       </li>
+      </ul>
+      <button class="w-full py-3 border-2 border-[#C6A664] text-[#1C1C1C] hover:bg-[#C6A664] transition duration-300 rounded-full">
+       Start My Book
+      </button>
+     </div>
+     <!-- Generations Edition -->
+     <div class="relative border-2 border-[#C6A664] rounded-lg p-8 transition-all duration-300 price-card shadow-lg" data-aos="zoom-in-down">
+      <div class="popular-badge">
+       MOST POPULAR
+      </div>
+      <h3 class="text-2xl font-bold mb-4">
+       Generations Edition
+      </h3>
+      <p class="text-4xl font-bold gold-accent mb-6">
+       $2,499
+      </p>
+      <p class="text-gray-500 mb-6">
+       Comprehensive coverage of your family's journey
+      </p>
+      <ul class="space-y-3 mb-8">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Up to 100 pages
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         10 hours of interviews
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Family tree (5 generations)
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         10 QR code stories
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         2 luxury hardcovers
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Digital copy
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Historical context research
+        </span>
+       </li>
+       <li class="flex items-start text-gray-400">
+        <i class="fas fa-times mt-1 mr-2">
+        </i>
+        <span>
+         No gift box
+        </span>
+       </li>
+      </ul>
+      <button class="w-full py-3 bg-[#C6A664] text-[#1C1C1C] hover:bg-[#b59458] transition duration-300 rounded-full font-bold">
+       Start My Book
+      </button>
+     </div>
+     <!-- Heirloom Edition -->
+     <div class="relative border border-gray-200 rounded-lg p-8 transition-all duration-300 price-card" data-aos="zoom-in-down" data-aos-delay="200">
+      <h3 class="text-2xl font-bold mb-4">
+       Heirloom Edition
+      </h3>
+      <p class="text-4xl font-bold gold-accent mb-6">
+       $3,999
+      </p>
+      <p class="text-gray-500 mb-6">
+       The ultimate preservation of your legacy
+      </p>
+      <ul class="space-y-3 mb-8">
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Up to 200 pages
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         20 hours of interviews
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Family tree (7+ generations)
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         20 QR code stories
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         3 luxury hardcovers
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Digital copy + audio version
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Extended historical research
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Archival gift box
+        </span>
+       </li>
+       <li class="flex items-start">
+        <i class="fas fa-check gold-accent mt-1 mr-2">
+        </i>
+        <span>
+         Children's version included
+        </span>
+       </li>
+      </ul>
+      <button class="w-full py-3 border-2 border-[#C6A664] text-[#1C1C1C] hover:bg-[#C6A664] transition duration-300 rounded-full">
+       Start My Book
+      </button>
+     </div>
+    </div>
+    <div class="mt-12 text-center" data-aos="fade-up">
+     <p class="text-gray-600 mb-6">
+      Need a custom solution? We offer flexible payment plans.
+     </p>
+     <button class="px-8 py-3 border border-[#C6A664] text-[#C6A664] hover:bg-[#C6A664] hover:text-white transition duration-300 rounded-full">
+      Discuss Payment Options
+      <i class="fas fa-credit-card ml-2">
+      </i>
+     </button>
+    </div>
+   </div>
+  </section>
+  <!-- Final CTA Section -->
+  <section class="py-28 bg-[#1C1C1C] text-white relative overflow-hidden">
+   <img alt="African heritage book open on a wooden table with soft warm light illuminating the pages, showing intricate cultural patterns and family photos" class="absolute inset-0 w-full h-full object-cover opacity-10" height="600" src="https://storage.googleapis.com/a1aa/image/1f4e0317-c8d9-476f-2988-0682dcc46c04.jpg" width="1200"/>
+   <div class="container mx-auto px-6 text-center relative z-10">
+    <div class="max-w-3xl mx-auto">
+     <div class="mb-8" data-aos="fade-in-up" data-aos-duration="1000">
+      <span class="text-[#C6A664] uppercase tracking-wider text-sm font-semibold">
+       Begin Your Journey
+      </span>
+     </div>
+     <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight" data-aos="fade-in-up" data-aos-delay="200" data-aos-duration="1000">
+      Let your story outlive you.
+     </h2>
+     <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto" data-aos="fade-in-up" data-aos-delay="400" data-aos-duration="1000">
+      A name fades, but a memory written becomes eternal. Begin preserving your family's legacy today.
+     </p>
+     <div class="flex flex-col md:flex-row justify-center gap-4" data-aos="fade-in-up" data-aos-delay="600" data-aos-duration="1000">
+      <button class="px-10 py-4 bg-[#C6A664] text-[#1C1C1C] text-xl font-bold hover:bg-[#b59458] transition duration-300 hover-glow rounded-full">
+       Create My Book
+      </button>
+      <button class="px-10 py-4 border-2 border-white text-white text-xl font-bold hover:bg-white hover:text-[#1C1C1C] transition duration-300 rounded-full">
+       Book a Consultation
+      </button>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="py-20 bg-[#F9F5EC]" id="contact">
+   <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+     <span class="text-[#C6A664] uppercase tracking-wider text-sm font-semibold">
+      Get in Touch
+     </span>
+     <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
+      Contact Us
+     </h2>
+     <div class="w-20 h-1 bg-[#C6A664] mx-auto">
+     </div>
+    </div>
+    <div class="flex flex-col lg:flex-row gap-12">
+     <!-- Contact Info -->
+     <div class="lg:w-1/2" data-aos="fade-right">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+       <div class="contact-info-card bg-white p-6 rounded-lg shadow-md">
+        <div class="text-3xl gold-accent mb-4">
+         <i class="fas fa-map-marker-alt">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">
+         Our Office
+        </h3>
+        <p class="text-gray-600">
+         24 Heritage Lane
+         <br/>
+         Accra, Ghana
+         <br/>
+         PMB CT 1234
+        </p>
+       </div>
+       <div class="contact-info-card bg-white p-6 rounded-lg shadow-md">
+        <div class="text-3xl gold-accent mb-4">
+         <i class="fas fa-phone-alt">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">
+         Call Us
+        </h3>
+        <p class="text-gray-600">
+         +233 24 123 4567
+         <br/>
+         +233 50 987 6543
+         <br/>
+         Mon-Fri, 9am-5pm GMT
+        </p>
+       </div>
+       <div class="contact-info-card bg-white p-6 rounded-lg shadow-md">
+        <div class="text-3xl gold-accent mb-4">
+         <i class="fas fa-envelope">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">
+         Email Us
+        </h3>
+        <p class="text-gray-600">
+         info@enamibooks.com
+         <br/>
+         support@enamibooks.com
+         <br/>
+         Response within 24 hours
+        </p>
+       </div>
+       <div class="contact-info-card bg-white p-6 rounded-lg shadow-md">
+        <div class="text-3xl gold-accent mb-4">
+         <i class="fas fa-calendar-alt">
+         </i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">
+         Book a Call
+        </h3>
+        <p class="text-gray-600">
+         Schedule a consultation
+         <br/>
+         with our heritage specialists
+         <br/>
+         <a class="gold-accent underline" href="#">
+          Click to book
+         </a>
+        </p>
+       </div>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+       <h3 class="text-xl font-bold mb-4">
+        Our Global Presence
+       </h3>
+       <div class="aspect-w-16 aspect-h-9">
+        <iframe allowfullscreen="" class="rounded-lg" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127059.7111948543!2d-0.22780549999999998!3d5.6037168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9084b2b7a773%3A0xbed14ed8650e2dd3!2sAccra!5e0!3m2!1sen!2sgh!4v1684323456789!5m2!1sen!2sgh" style="border: 0" width="100%">
+        </iframe>
+       </div>
+       <p class="text-sm text-gray-500 mt-2">
+        Our headquarters in Accra, with team members across Africa, Europe, and North America.
+       </p>
+      </div>
+     </div>
+     <!-- Contact Form -->
+     <div class="lg:w-1/2" data-aos="fade-left">
+      <div class="border border-[#C6A664] rounded-lg p-8 md:p-12 bg-white shadow-lg">
+       <h3 class="text-2xl font-bold mb-6 text-center">
+        Send Us a Message
+       </h3>
+       <form class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+         <div>
+          <label class="block mb-2 font-medium" for="name">
+           Your Name *
+          </label>
+          <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#C6A664] focus:ring-1 focus:ring-[#C6A664]" id="name" type="text"/>
+         </div>
+         <div>
+          <label class="block mb-2 font-medium" for="email">
+           Email Address *
+          </label>
+          <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#C6A664] focus:ring-1 focus:ring-[#C6A664]" id="email" type="email"/>
+         </div>
+        </div>
+        <div>
+         <label class="block mb-2 font-medium" for="phone">
+          Phone Number
+         </label>
+         <input class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#C6A664] focus:ring-1 focus:ring-[#C6A664]" id="phone" type="tel"/>
+        </div>
+        <div>
+         <label class="block mb-2 font-medium" for="subject">
+          Subject *
+         </label>
+         <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#C6A664] focus:ring-1 focus:ring-[#C6A664]" id="subject">
+          <option value="">
+           Select a subject
+          </option>
+          <option value="general">
+           General Inquiry
+          </option>
+          <option value="booking">
+           Book a Consultation
+          </option>
+          <option value="pricing">
+           Pricing Questions
+          </option>
+          <option value="existing">
+           Existing Project
+          </option>
+         </select>
+        </div>
+        <div>
+         <label class="block mb-2 font-medium" for="message">
+          Your Message *
+         </label>
+         <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-[#C6A664] focus:ring-1 focus:ring-[#C6A664]" id="message" rows="5"></textarea>
+        </div>
+        <div class="flex items-center">
+         <input class="mr-2 rounded focus:ring-[#C6A664]" id="consent" type="checkbox"/>
+         <label class="text-sm text-gray-600" for="consent">
+          I agree to ENAMI's privacy policy and terms of service
+         </label>
+        </div>
+        <button class="w-full py-4 bg-[#C6A664] text-[#1C1C1C] font-bold hover:bg-[#b59458] transition duration-300 rounded-full" type="submit">
+         Send Message
+         <i class="fas fa-paper-plane ml-2">
+         </i>
+        </button>
+       </form>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="dark-bg pt-20 pb-12">
+   <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+     <!-- About Column -->
+     <div>
+      <div class="text-2xl font-bold gold-accent mb-4">
+       ENAMI
+      </div>
+      <p class="text-gray-400 mb-6">
+       Preserving African family legacies through beautifully crafted heritage books since 2015.
+      </p>
+      <div class="flex space-x-4">
+       <a class="text-gray-400 hover:text-[#C6A664] text-xl" href="#">
+        <i class="fab fa-facebook-f">
+        </i>
+       </a>
+       <a class="text-gray-400 hover:text-[#C6A664] text-xl" href="#">
+        <i class="fab fa-instagram">
+        </i>
+       </a>
+       <a class="text-gray-400 hover:text-[#C6A664] text-xl" href="#">
+        <i class="fab fa-linkedin-in">
+        </i>
+       </a>
+       <a class="text-gray-400 hover:text-[#C6A664] text-xl" href="#">
+        <i class="fab fa-youtube">
+        </i>
+       </a>
+      </div>
+     </div>
+     <!-- Links Column -->
+     <div>
+      <h3 class="text-lg font-bold text-white mb-6">
+       Quick Links
+      </h3>
+      <ul class="space-y-3">
+       <li>
+        <a class="text-gray-400 footer-link" href="#home">
+         Home
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#about">
+         About Us
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#features">
+         Book Features
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#process">
+         Our Process
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#pricing">
+         Pricing
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#contact">
+         Contact
+        </a>
+       </li>
+      </ul>
+     </div>
+     <!-- Resources Column -->
+     <div>
+      <h3 class="text-lg font-bold text-white mb-6">
+       Resources
+      </h3>
+      <ul class="space-y-3">
+       <li>
+        <a class="text-gray-400 footer-link" href="#">
+         Blog
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#">
+         Family History Tips
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#">
+         Interview Guide
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#">
+         Sample Chapters
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#">
+         FAQ
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-400 footer-link" href="#">
+         Privacy Policy
+        </a>
+       </li>
+      </ul>
+     </div>
+     <!-- Newsletter Column -->
+     <div>
+      <h3 class="text-lg font-bold text-white mb-6">
+       Newsletter
+      </h3>
+      <p class="text-gray-400 mb-4">
+       Subscribe to receive updates and family history tips.
+      </p>
+      <form class="flex">
+       <input class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-800" placeholder="Your email" type="email"/>
+       <button class="bg-[#C6A664] text-[#1C1C1C] px-4 py-2 rounded-r-lg font-bold" type="submit">
+        <i class="fas fa-paper-plane">
+        </i>
+       </button>
+      </form>
+      <p class="text-xs text-gray-500 mt-2">
+       We'll never share your email. Unsubscribe anytime.
+      </p>
+     </div>
+    </div>
+    <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+     <p class="text-gray-400 text-sm mb-4 md:mb-0">
+      © 2023 ENAMI Heritage Books. All rights reserved.
+     </p>
+     <div class="flex space-x-6">
+      <a class="text-gray-400 hover:text-[#C6A664] text-sm" href="#">
+       Terms of Service
+      </a>
+      <a class="text-gray-400 hover:text-[#C6A664] text-sm" href="#">
+       Privacy Policy
+      </a>
+      <a class="text-gray-400 hover:text-[#C6A664] text-sm" href="#">
+       Cookies
+      </a>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
+  <!-- Custom JS -->
+  <script>
+   // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+      });
+
+      // FAQ Accordion
+      document.querySelectorAll(".faq-toggle").forEach((button) => {
+        button.addEventListener("click", () => {
+          const content = button.nextElementSibling;
+          const icon = button.querySelector("i");
+
+          // Close all other accordions
+          document.querySelectorAll(".accordion-content").forEach((item) => {
+            if (item !== content) {
+              item.style.maxHeight = null;
+              const otherIcon = item.previousElementSibling.querySelector("i");
+              otherIcon.classList.remove("fa-chevron-up");
+              otherIcon.classList.add("fa-chevron-down");
+            }
+          });
+
+          // Toggle current content
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.classList.remove("fa-chevron-up");
+            icon.classList.add("fa-chevron-down");
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.classList.remove("fa-chevron-down");
+            icon.classList.add("fa-chevron-up");
+          }
+        });
+      });
+
+      // Mobile menu toggle
+      document.querySelector(".md\\:hidden").addEventListener("click", function () {
+        alert(
+          "Mobile menu would open here. Implementation depends on your specific mobile menu design."
+        );
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+  </script>
+ </body>
+</html>
